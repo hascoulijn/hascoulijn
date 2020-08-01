@@ -28,12 +28,24 @@ return [
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => false,
+
+        // The image driver Craft should use to cleanse and transform images.
+        // By default Craft will auto-detect if ImageMagick is installed and fallback to 
+        // GD if not. You can explicitly set either 'imagick' or 'gd' here to override
+        // that behavior.
+        'imageDriver' => 'imagick',
+
+        // Generate asset transforms before page load.
+        'generateTransformsBeforePageLoad' => true,
     ],
 
     // Dev environment settings
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
+
+        // Whether to enable Craft's template {% cache %} tag on a global basis
+        'enableTemplateCaching' => false
     ],
 
     // Staging environment settings
