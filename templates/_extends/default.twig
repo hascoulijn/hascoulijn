@@ -1,0 +1,20 @@
+{%- cache -%}
+{%- minify -%}
+<!DOCTYPE html>
+<html lang="{{ craft.app.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ rev('css/screen.css') }}">
+  </head>
+  <body class="app">
+    <main class="scaffold">
+      {% block page %}
+      {% endblock page %}
+    </main>
+  </body>
+</html>
+{%- endminify -%}
+{%- endcache -%}
