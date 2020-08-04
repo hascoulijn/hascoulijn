@@ -6,6 +6,7 @@ const { src, dest, watch, series, parallel } = require('gulp'),
   concat = require('gulp-concat'),
   rev = require('gulp-rev'),
   del = require('delete');
+const gulpCleanCss = require('gulp-clean-css');
 
 /**
  * Delete files declared in the glob.
@@ -46,4 +47,7 @@ function revision() {
  * Run '$ gulp --tasks' for a complete lists of Gulp tasks available.
  */
 exports.clean = clean;
+exports.watch = function() {
+  watch(['./lib/css/**/*.css'], series(clean, styles, revision));
+}
 exports.default = series(clean, styles, revision);
