@@ -1,8 +1,9 @@
 {
   "require": {
     "clubstudioltd/craft-asset-rev": "6.0.2",
-    "craftcms/cms": "^3.4.25",
+    "craftcms/cms": "3.5.2",
     "nystudio107/craft-minify": "1.2.10",
+    "topshelfcraft/wordsmith": "3.3.0.1",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
