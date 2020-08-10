@@ -1,3 +1,20 @@
 {% extends '_extends/default' %}
 {% block page %}
+  <div class="container monospace">
+    {% if not craft.app.request.isSecureConnection %}
+      <strong>Secure connection with {{ craft.app.request.serverName }} could not be established.</strong>
+    {% else %}
+      Secure connection established with {{ craft.app.request.serverName }} via SSL.
+    {% endif %}
+    <br>
+    Welcome to {{ craft.app.request.serverName }} 0.1.0
+    <br><br>
+    User Agent: {{ craft.app.request.userAgent }}
+    <br>
+    OS: {{ craft.app.request.clientOs }}
+    <br><br>
+    Last login: {{ now|date('D M j H:i:s') }}
+    <br>
+    <span class="green">{{ craft.app.request.userIp }}@{{ craft.app.request.serverName }}</span>:~$
+  </div>
 {% endblock page %}
