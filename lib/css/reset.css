@@ -1,4 +1,4 @@
-/*! reset */
+/*! reset.css */
 
 *,
 *:before,
@@ -41,6 +41,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/**
+ * Remove whitespace from images.
+ */
+img {
+  display: block;
 }
 
 /**

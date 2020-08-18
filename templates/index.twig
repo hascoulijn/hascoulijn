@@ -1,20 +1,63 @@
+{# Extend default template. #}
 {% extends '_extends/default' %}
+
+{# Assign values to entry's meta variables. #}
+{% set title = entry.seoTitle %}
+{% set description = entry.seoDescription %}
+
+{# Start block. #}
 {% block page %}
-  <div class="container monospace">
-    {% if not craft.app.request.isSecureConnection %}
-      <strong>Secure connection with {{ craft.app.request.serverName }} could not be established.</strong>
-    {% else %}
-      Secure connection established with {{ craft.app.request.serverName }} via SSL.
-    {% endif %}
-    <br>
-    Welcome to {{ craft.app.request.serverName }} 0.1.1
-    <br><br>
-    User Agent: {{ craft.app.request.userAgent }}
-    <br>
-    OS: {{ craft.app.request.clientOs }}
-    <br><br>
-    Last login: {{ now|date('D M j H:i:s') }}
-    <br>
-    <span class="green">{{ craft.app.request.userIp }}@{{ craft.app.request.serverName }}</span>:~$
-  </div>
+
+  <!-- Section -->
+  <section class="section">
+
+    <!-- Container -->
+    <div class="container">
+
+      <!-- Title -->
+      <h2 class="title h4">Topics</h2>
+
+      <!-- Row -->
+      <div class="row">
+
+
+        {# Create topics query. #}
+        {% set topics = craft.categories.group('topics').all() %}
+
+        {#
+        # Fetch all topics in a navigation structure;
+        # https://craftcms.com/knowledge-base/displaying-a-navigation-for-a-structure-section.
+        #}
+        {% nav topic in topics %}
+
+          <!-- Topic -->
+          <a href="#" class="topic card card--link">
+
+            {# Create asset query. #}
+            {% set image = topic.topicsImage.one() %}
+
+            {# Fetch asset. #}
+            <img class="topic__image" src="{{ image.url() }}" alt="{{ image.title }}">
+            <h2 class="topic__title h4">{{ topic.title }}</h4>
+            <p class="topic__description">{{ topic.topicsDescription }}</p>
+          </a>
+        {% endnav %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section -->
+  <section class="section">
+
+    <!-- Container -->
+    <div class="container">
+
+      <!-- Title -->
+      <h2 class="title h4">Articles</h3>
+
+      {# Create articles query. #}
+
+    </div>
+  </section>
+
 {% endblock page %}

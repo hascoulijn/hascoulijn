@@ -1,0 +1,136 @@
+/*! screen.css */
+
+/**
+ * All declarations in the application's body rule set are global and its values
+ * are preferably declared via custom properties.
+ */
+.app {
+  font-family: var(--app-font);
+  color: var(--app-color);
+  background-color: var(--app-color-background);
+}
+
+/**
+ * A section is part of the scaffold and serves the purpose to divide content
+ * in a vertical direction on the page.
+ */
+.section {
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * 1. Remove bottom border from last section.
+ */
+.section:last-child {
+  border-bottom: 0; /* 1 */
+}
+
+/**
+ * The container is part of the scaffold and sets a maximum width value to the
+ * scaffold's content. If a container is within a section it will be centered.
+ */
+.container {
+  width: 100%;
+  max-width: 64rem;
+}
+
+/**
+ * The title is a standard widget to display a section's title.
+ */
+.title {
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * The row is part of the scaffold and divides its child elements horizontally.
+ */
+.row {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/**
+ * The card component defines standard styling for a card and is globally
+ * applicable to any element.
+ */
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/**
+ * Card link modifier.
+ */
+.card--link:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/**
+ * Topic specific rulesets.
+ */
+.topic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topic__image {
+  width: 4rem;
+  height: 4rem;
+}
+
+.topic__description {
+  text-align: center;
+}
+
+/**
+ * Portrait mode media queries.
+ */
+@media screen and (max-width: 768px) {
+
+  /**
+   * Decreease spacing betweeen sections and its content.
+   */
+  .section {
+    padding: 2rem 2rem;
+  }
+
+  /**
+   * Make grid columns full width.
+   */
+  .row {
+    grid-auto-columns: minmax(100%, 100%);
+  }
+}
+
+/**
+ * Landscape media queries.
+ */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  /**
+   * Allow two grid columns.
+   */
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**
+ * Desktop media queries.
+ */
+@media screen and (min-width: 1025px) {
+
+  /**
+   * Allow three grid columns.
+   */
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

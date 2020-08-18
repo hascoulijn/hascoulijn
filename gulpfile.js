@@ -24,7 +24,7 @@ function clean() {
  * 4. Write build file in destinated glob.
  */
 function styles() {
-  return src(['./lib/css/reset.css', './lib/css/screen.css'])
+  return src(['./lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/app.css'])
     .pipe(autoprefix()) // 1
     .pipe(compress()) // 2
     .pipe(concat('screen.css')) // 3

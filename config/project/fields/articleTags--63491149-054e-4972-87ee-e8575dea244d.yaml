@@ -1,0 +1,22 @@
+contentColumnType: string
+fieldGroup: 730c487e-39c7-4619-a0ae-58435f282f96
+handle: articleTags
+instructions: 'Tags are keywords that describe the subject of the article and are used to group articles with collective tags together.'
+name: Tags
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'taggroup:1d0f35f8-cf6f-4e31-bb44-f99e93546275'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Tags

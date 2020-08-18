@@ -1,0 +1,18 @@
+contentColumnType: string(640)
+fieldGroup: 51354ca3-dfac-407c-b04f-646210bde672
+handle: seoDescription
+instructions: 'The SEO description will be shown as the description of a search result in search engines and should be descriptive the page''s content. The optimal length of a description is between 155~160 characters according to [Moz](https://moz.com/learn/seo/meta-description).'
+name: Description
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 160
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: 'Search engine description'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

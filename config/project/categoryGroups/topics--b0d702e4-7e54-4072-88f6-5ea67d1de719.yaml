@@ -1,0 +1,82 @@
+fieldLayouts:
+  1da04295-a7dd-4eb1-82ea-3097169b30dc:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            autofocus: false
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 745fdfa3-f4d3-45c5-b405-76f5d7145ee3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8787521a-c870-4f52-9bb3-61bd6eaa7c85
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 312908ad-46ee-4678-9946-6f81c00c4e70
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1409b622-b3e6-4011-bee4-6fa2bcfed370
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+handle: topics
+name: Topics
+siteSettings:
+  6c7d1f16-a40b-4166-aa58-8c5ecf0617e2:
+    hasUrls: true
+    template: category.twig
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 1
+  uid: 04d67526-f2a4-4166-9e96-496236ec420a
