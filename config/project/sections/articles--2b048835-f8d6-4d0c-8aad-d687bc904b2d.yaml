@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: articles
+name: Articles
+propagationMethod: all
+siteSettings:
+  6c7d1f16-a40b-4166-aa58-8c5ecf0617e2:
+    enabledByDefault: true
+    hasUrls: true
+    template: entry.twig
+    uriFormat: '{slug}'
+type: channel

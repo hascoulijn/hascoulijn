@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: f013ce60-c451-4d05-8349-973abeb9dc25
+handle: topicsImage
+instructions: 'Add a logo that is related to the subject of the topic.'
+name: Image
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:82d8c220-9573-4391-bc5c-9cd5e304ef7d'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add an image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:82d8c220-9573-4391-bc5c-9cd5e304ef7d'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: true
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

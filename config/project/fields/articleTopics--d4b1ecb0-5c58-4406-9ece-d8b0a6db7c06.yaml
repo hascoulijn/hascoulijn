@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 730c487e-39c7-4619-a0ae-58435f282f96
+handle: articleTopics
+instructions: 'Topics group articles of the same subject together to make it easier to explore articles of a certain topic.'
+name: Topics
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:b0d702e4-7e54-4072-88f6-5ea67d1de719'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories
