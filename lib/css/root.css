@@ -1,0 +1,23 @@
+/*! root.css */
+
+/**
+ * Declare custom properties for this application.
+ */
+ :root {
+  --app-font: system-ui;
+  --app-color: #333;
+  --app-color-heading: #111;
+  --app-color-background: #fff;
+}
+
+/**
+ * Override custom properties for users that prefer an interface that has a
+ * dark theme.
+ */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --app-color: #ccc;
+    --app-color-heading: #fff;
+    --app-color-background: #111;
+  }
+}
