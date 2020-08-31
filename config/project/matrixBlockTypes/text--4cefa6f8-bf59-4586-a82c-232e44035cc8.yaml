@@ -1,0 +1,40 @@
+field: 9707ae4b-868d-4bcd-afc9-0fba747a1b3a
+fieldLayouts:
+  729f0d2e-20db-490f-8432-81d283aa0ac9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5b03e559-21e1-44b2-aec2-e63b546864e1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5b03e559-21e1-44b2-aec2-e63b546864e1:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: 'Insert text as Markdown. See [Markdown Guide](https://ia.net/writer/support/general/markdown-guide) for tips and tricks on how to write Markdown.'
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: 'Insert Markdown'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: text
+name: Text
+sortOrder: 1

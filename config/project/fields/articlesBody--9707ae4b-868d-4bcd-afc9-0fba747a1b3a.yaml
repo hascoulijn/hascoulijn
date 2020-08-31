@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 730c487e-39c7-4619-a0ae-58435f282f96
+handle: articlesBody
+instructions: 'The body makes up the content of the article.'
+name: Body
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_articlesbody}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

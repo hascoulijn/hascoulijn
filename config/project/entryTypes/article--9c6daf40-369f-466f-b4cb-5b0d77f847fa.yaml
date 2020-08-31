@@ -31,6 +31,17 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
+            fieldUid: 9707ae4b-868d-4bcd-afc9-0fba747a1b3a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
             fieldUid: d4b1ecb0-5c58-4406-9ece-d8b0a6db7c06
             instructions: null
             label: null
@@ -38,16 +49,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
-          -
-            fieldUid: 63491149-054e-4972-87ee-e8575dea244d
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
+            width: 100
         name: Content
         sortOrder: 1
       -
