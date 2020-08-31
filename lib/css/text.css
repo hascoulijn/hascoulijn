@@ -19,45 +19,67 @@ h6, .h6 {
  * Heading font sizes are an increment of `0.5rem` per heading for consistency.
  */
 h1, .h1 {
-  font-size: 3rem;
-  line-height: 1.1667em;
-}
-
-h2, .h2 {
-  font-size: 2.5rem;
-  line-height: 1.2em;
-}
-
-h3, .h3 {
   font-size: 2rem;
   line-height: 1.25em;
 }
 
-/**
- * 1. Use a very specific line height value for a rounded result on run-time.
- */
-h4, .h4 {
+h2, .h2 {
   font-size: 1.5rem;
-  line-height: 1.3333333333em; /* 1 */
+  line-height: 1.3333333333em;
 }
 
 /**
- * Heading five and six are the same whereas heeading six is the same color
- * as body text to differentiate them.
+ * 1. Use a very specific line height to round the actual amount when the
+ *    document is painted.
  */
-h5, .h5,
-h6, .h6 {
+h3, .h3 {
   font-size: 1rem;
   line-height: 1.5em;
-}
-
-h6, .h6 {
-  color: var(--app-color);
 }
 
 p,
 img {
   margin: 0.5rem 0;
+}
+
+p code,
+li code,
+blockquote code {
+  padding: 0.25rem 0.5rem;
+  color: #666;
+  border-radius: 0.5rem;
+  background-color: var(--app-color-background-alt);
+}
+
+.article {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.article h1, .article .h1,
+.article h2, .article .h2,
+.article h3, .article .h3,
+.article h4, .article .h4 {
+  margin: 2rem 0 1rem;
+}
+
+.article :first-child {
+  margin-top: 0;
+}
+
+.article p, .article img,
+.article blockquote, .article pre {
+  margin: 1rem 0;
+}
+
+.article ul, .article ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+blockquote {
+  padding-left: 1rem;
+  color: #888;
+  border-left: 4px solid var(--app-color-border);
 }
 
 /**
@@ -72,4 +94,10 @@ img {
  */
 *:last-child {
   margin-bottom: 0;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--app-color-background-alt);
 }

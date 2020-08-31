@@ -65,3 +65,11 @@ strong {
 small {
   font-size: 0.75em;
 }
+
+pre {
+  overflow-x: auto;
+}
+
+code {
+  font-size: 0.875em;
+}

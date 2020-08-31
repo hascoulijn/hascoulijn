@@ -8,6 +8,9 @@
   --app-color: #333;
   --app-color-heading: #111;
   --app-color-background: #fff;
+  --app-color-background-alt: #f5f5f5;
+  --app-color-background-active: #fcfcfc;
+  --app-color-border: #e5e5e5;
 }
 
 /**
@@ -19,5 +22,8 @@
     --app-color: #ccc;
     --app-color-heading: #fff;
     --app-color-background: #111;
+    --app-color-background-alt: #222;
+    --app-color-background-active: #121212;
+    --app-color-border: #212121;
   }
 }

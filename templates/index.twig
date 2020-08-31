@@ -14,31 +14,30 @@
     <!-- Container -->
     <div class="container">
 
+      {# Create topics query. #}
+      {% set topics = craft.categories.group('topics') %}
+
       <!-- Title -->
-      <h2 class="title h4">Topics</h2>
+      <h2 class="title">{{ topics.one.group }}</h2>
 
       <!-- Row -->
       <div class="row">
-
-
-        {# Create topics query. #}
-        {% set topics = craft.categories.group('topics').all() %}
 
         {#
         # Fetch all topics in a navigation structure;
         # https://craftcms.com/knowledge-base/displaying-a-navigation-for-a-structure-section.
         #}
-        {% nav topic in topics %}
+        {% nav topic in topics.all() %}
 
           <!-- Topic -->
-          <a href="#" class="topic card card--link">
+          <a href="{{ topic.url }}" class="topic card card--link">
 
             {# Create asset query. #}
             {% set image = topic.topicsImage.one() %}
 
             {# Fetch asset. #}
             <img class="topic__image" src="{{ image.url() }}" alt="{{ image.title }}">
-            <h2 class="topic__title h4">{{ topic.title }}</h4>
+            <h3 class="topic__title h3">{{ topic.title }}</h3>
             <p class="topic__description">{{ topic.topicsDescription }}</p>
           </a>
         {% endnav %}
@@ -53,9 +52,22 @@
     <div class="container">
 
       <!-- Title -->
-      <h2 class="title h4">Articles</h3>
+      <h2 class="title">Articles</h3>
 
       {# Create articles query. #}
+      {% set articles = craft.entries.section('articles').all() %}
+
+      {# Fetch articles. #}
+      {% for article in articles %}
+        <article class="article">
+          <h1>{{ article.title }}</h1>
+          {% for block in article.articlesBody.all() %}
+            {% if block.type == 'text' %}
+              {{ block.text|parsedown }}
+            {% endif %}
+          {% endfor %}
+        </article>
+      {% endfor %}
 
     </div>
   </section>
