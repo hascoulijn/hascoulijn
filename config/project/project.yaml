@@ -1,4 +1,4 @@
-dateModified: 1597820783
+dateModified: 1598908965
 email:
   fromEmail: hascoulijn@gmail.com
   fromName: hascoulijn
@@ -24,7 +24,7 @@ system:
   edition: solo
   live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.5.12
+  schemaVersion: 3.5.13
   timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
