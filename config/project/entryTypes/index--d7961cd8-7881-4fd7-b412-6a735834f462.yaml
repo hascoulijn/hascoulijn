@@ -1,5 +1,5 @@
 fieldLayouts:
-  1b58c46e-64cf-4371-af90-3c173d7074f8:
+  73d9b628-faee-4431-b766-e88521ba7408:
     tabs:
       -
         elements:
@@ -7,12 +7,11 @@ fieldLayouts:
             autocapitalize: true
             autocomplete: false
             autocorrect: true
-            autofocus: false
             class: null
             disabled: false
             id: null
-            instructions: 'Don''t use this field for Search Engine Optimization purposes.'
-            label: ''
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -29,9 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: 9707ae4b-868d-4bcd-afc9-0fba747a1b3a
+            fieldUid: 745fdfa3-f4d3-45c5-b405-76f5d7145ee3
             instructions: null
             label: null
             required: false
@@ -40,9 +37,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: d4b1ecb0-5c58-4406-9ece-d8b0a6db7c06
+            fieldUid: 8787521a-c870-4f52-9bb3-61bd6eaa7c85
             instructions: null
             label: null
             required: false
@@ -74,10 +69,10 @@ fieldLayouts:
             width: 100
         name: SEO
         sortOrder: 2
-handle: article
+handle: index
 hasTitleField: true
-name: Article
-section: 2b048835-f8d6-4d0c-8aad-d687bc904b2d
+name: Index
+section: 236456c9-de77-4e5a-aaa8-15fff0155ee3
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
