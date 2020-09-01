@@ -1,0 +1,27 @@
+/*! article.css */
+
+.article {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.article h1,
+.article .h1,
+.article h2,
+.article .h2,
+.article h3,
+.article .h3 {
+  margin: 2rem 0 1rem;
+}
+
+.article p,
+.article img,
+.article blockquote,
+.article pre {
+  margin: 1rem 0;
+}
+
+.article ul,
+.article ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
