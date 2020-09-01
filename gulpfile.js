@@ -24,7 +24,7 @@ function clean() {
  *    requests on runtime.
  */
 function styles() {
-  return src(['./lib/js/highlight.js/vs.css', './lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/app.css'])
+  return src(['./lib/js/highlight.js/vs.css', './lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/article.css', './lib/css/app.css'])
     .pipe(autoprefix()) // 1
     .pipe(compress()) // 2
     .pipe(concat('screen.css')) // 3
