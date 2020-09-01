@@ -7,7 +7,7 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: guides
-    uriFormat: '{parent.uri ?? section.handle}/{slug}'
+    uriFormat: '{parent.uri}/{slug}'
 structure:
   maxLevels: null
   uid: 856d45f6-3614-4002-aab3-63aaa40f19c9

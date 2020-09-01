@@ -10,7 +10,7 @@ settings:
   code: ''
   columnType: null
   initialRows: '4'
-  multiline: '1'
+  multiline: ''
   placeholder: 'Add a description'
   uiMode: normal
 translationKeyFormat: null
