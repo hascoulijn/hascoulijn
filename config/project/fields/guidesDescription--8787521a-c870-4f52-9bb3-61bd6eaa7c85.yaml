@@ -1,7 +1,7 @@
 contentColumnType: text
 fieldGroup: f013ce60-c451-4d05-8349-973abeb9dc25
-handle: topicsDescription
-instructions: 'Add a short description about the topic subject and what type of articles it may contain.'
+handle: guidesDescription
+instructions: 'Add a short description about the guide''s subject and what type of articles it may contain.'
 name: Description
 searchable: true
 settings:
@@ -10,7 +10,7 @@ settings:
   code: ''
   columnType: null
   initialRows: '4'
-  multiline: '1'
+  multiline: ''
   placeholder: 'Add a description'
   uiMode: normal
 translationKeyFormat: null

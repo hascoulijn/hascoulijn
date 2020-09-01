@@ -19,40 +19,22 @@ h6, .h6 {
  * Heading font sizes are an increment of `0.5rem` per heading for consistency.
  */
 h1, .h1 {
-  font-size: 3rem;
-  line-height: 1.1667em;
-}
-
-h2, .h2 {
   font-size: 2.5rem;
   line-height: 1.2em;
 }
 
-h3, .h3 {
+h2, .h2 {
   font-size: 2rem;
   line-height: 1.25em;
 }
 
 /**
- * 1. Use a very specific line height value for a rounded result on run-time.
+ * 1. Use a very specific line height to round the actual amount when the
+ *    document is painted.
  */
-h4, .h4 {
+h3, .h3 {
   font-size: 1.5rem;
-  line-height: 1.3333333333em; /* 1 */
-}
-
-/**
- * Heading five and six are the same whereas heeading six is the same color
- * as body text to differentiate them.
- */
-h5, .h5,
-h6, .h6 {
-  font-size: 1rem;
-  line-height: 1.5em;
-}
-
-h6, .h6 {
-  color: var(--app-color);
+  line-height: 1.3333333333em;
 }
 
 p,
@@ -60,16 +42,24 @@ img {
   margin: 0.5rem 0;
 }
 
+.text a {
+  color: var(--app-color-link);
+}
+
+.text a:hover {
+  text-decoration: underline;
+}
+
 /**
  * Remove excess margin from first child selectors.
  */
-*:first-child {
+.text *:first-child {
   margin-top: 0;
 }
 
 /**
  * Remove excess margin from last child selectors.
  */
-*:last-child {
+.text *:last-child {
   margin-bottom: 0;
 }

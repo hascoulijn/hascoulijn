@@ -1,0 +1,14 @@
+<!-- Section -->
+<section class="section">
+
+  <!-- Container -->
+  <div class="container">
+    <article class="article">
+      {% for block in entry.articlesBody %}
+        {% if block.type == 'text' %}
+          {{ block.text|parsedown }}
+        {% endif %}
+      {% endfor %}
+    </article>
+  </div>
+</section>

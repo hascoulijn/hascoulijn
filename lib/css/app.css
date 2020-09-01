@@ -15,17 +15,15 @@
  * in a vertical direction on the page.
  */
 .section {
-  display: grid;
-  place-items: center;
-  padding: 4rem 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
-/**
- * 1. Remove bottom border from last section.
- */
+.section:first-child {
+  padding-top: 4rem;
+}
+
 .section:last-child {
-  border-bottom: 0; /* 1 */
+  padding-bottom: 4rem;
 }
 
 /**
@@ -35,6 +33,7 @@
 .container {
   width: 100%;
   max-width: 64rem;
+  margin: 0 auto;
 }
 
 /**
@@ -49,7 +48,7 @@
  */
 .row {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 
 /**
@@ -57,80 +56,83 @@
  * applicable to any element.
  */
 .card {
-  padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--app-box-shadow);
   transition: box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--app-color-background-alt);
+  }
+}
+
+.card__body {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .guide {
+    display: grid;
+    grid-template-columns: 320px auto;
+  }
 }
 
 /**
- * Card link modifier.
+ * Guide specific rulesets.
  */
-.card--link:hover {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s ease-in-out;
+.guide__image {
+  max-width: 3.25rem;
 }
 
-/**
- * Topic specific rulesets.
- */
-.topic {
+.guide__entries {
   display: flex;
-  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.guide__entry {
+  display: flex;
   align-items: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  max-height: 2rem;
+  color: var(--app-color-heading);
+  background-color: var(--app-color-background);
+  border-radius: 1rem;
+  box-shadow: var(--app-box-shadow);
 }
 
-.topic__image {
-  width: 4rem;
-  height: 4rem;
+.guide__entry:hover {
+  color: var(--app-color-background);
+  background-color: var(--app-color-link);
 }
 
-.topic__description {
-  text-align: center;
+/* .guide__entry:active {
+  background-color: var(--app-color-background);
+} */
+
+.index {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  column-gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--app-color-border);
 }
 
-/**
- * Portrait mode media queries.
- */
-@media screen and (max-width: 768px) {
-
-  /**
-   * Decreease spacing betweeen sections and its content.
-   */
-  .section {
-    padding: 2rem 2rem;
-  }
-
-  /**
-   * Make grid columns full width.
-   */
-  .row {
-    grid-auto-columns: minmax(100%, 100%);
-  }
+.index__text {
+  max-width: 35rem;
 }
 
-/**
- * Landscape media queries.
- */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+.entries {
+  display: grid;
+  gap: 2rem;
+}
 
-  /**
-   * Allow two grid columns.
-   */
-  .row {
+@media screen and (min-width: 769px) {
+  .entries {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/**
- * Desktop media queries.
- */
-@media screen and (min-width: 1025px) {
-
-  /**
-   * Allow three grid columns.
-   */
-  .row {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

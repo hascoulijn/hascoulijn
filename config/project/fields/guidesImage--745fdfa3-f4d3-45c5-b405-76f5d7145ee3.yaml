@@ -1,7 +1,7 @@
 contentColumnType: string
 fieldGroup: f013ce60-c451-4d05-8349-973abeb9dc25
-handle: topicsImage
-instructions: 'Add a logo that is related to the subject of the topic.'
+handle: guidesImage
+instructions: 'Add a logo that is related to the subject of the guide.'
 name: Image
 searchable: false
 settings:
