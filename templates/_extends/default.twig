@@ -1,7 +1,7 @@
 {%- minify -%}
 <!DOCTYPE html>
 <html lang="{{ craft.app.locale }}">
-  {%- cache -%}
+  {# {%- cache -%} #}
     <head>
       <meta charset="utf-8">
       <title>{{ title }}</title>
@@ -10,7 +10,7 @@
       <link rel="stylesheet" href="{{ rev('css/screen.css') }}">
       <script type="text/javascript" src="{{ rev('js/screen.js') }}"></script>
     </head>
-  {%- endcache -%}
+  {# {%- endcache -%} #}
   <body class="app">
     <main class="scaffold">
       {% block page %}

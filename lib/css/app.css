@@ -56,72 +56,66 @@
  * applicable to any element.
  */
 .card {
-  padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--app-box-shadow);
   transition: box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--app-color-background-alt);
+  }
+}
+
+.card__body {
+  padding: 1rem;
+}
+
+.card__body > *:first-child {
+  margin-top: 0;
+}
+
+.card__body > *:last-child {
+  margin-bottom: 0;
 }
 
 /**
- * Card link modifier.
+ * Guide specific rulesets.
  */
-/* .card--link:hover {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s ease-in-out;
-} */
-
-.card--link:active {
-  background-color: var(--app-color-background-active);
-}
-
-/**
- * Topic specific rulesets.
- */
-.topic {
-  display: flex;
-  flex-direction: column;
-}
-
-.topic__image {
+.guide__image {
   width: 3.25rem;
   height: 3.25rem;
 }
 
-/**
- * Portrait mode media queries.
- */
-@media screen and (max-width: 768px) {
-
-  /**
-   * Make grid columns full width.
-   */
-  .row {
-    grid-auto-columns: minmax(100%, 100%);
-  }
+.guide__entries {
+  display: flex;
+  padding: 0.5rem;
 }
 
-/**
- * Landscape media queries.
- */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-
-  /**
-   * Allow two grid columns.
-   */
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.guide__entry {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  max-height: 2rem;
+  color: var(--app-color-heading);
+  background-color: var(--app-color-background);
+  border-radius: 1rem;
+  box-shadow: var(--app-box-shadow);
 }
 
-/**
- * Desktop media queries.
- */
-@media screen and (min-width: 1025px) {
+.guide__entry:hover {
+  background-color: var(--app-color-background-alt);
+}
 
-  /**
-   * Allow three grid columns.
-   */
-  .row {
-    grid-template-columns: repeat(3, 1fr);
+.guide__entry:active {
+  background-color: var(--app-color-background);
+}
+
+@media screen and (min-width: 768px) {
+  .guide {
+    display: grid;
+    grid-template-columns: 320px auto;
   }
 }

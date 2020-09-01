@@ -14,61 +14,48 @@
     <!-- Container -->
     <div class="container">
 
-      {# Create topics query. #}
-      {% set topics = craft.categories.group('topics') %}
+      {#
+      # Create guides query.
+      #}
+      {% set guides = craft.entries.section('guides') %}
 
       <!-- Title -->
-      <h2 class="title">{{ topics.one.group }}</h2>
+      <h2 class="title">{{ guides.one().section }}</h2>
 
-      <!-- Row -->
-      <div class="row">
+      <!-- Column -->
+      <div class="column">
 
         {#
-        # Fetch all topics in a navigation structure;
-        # https://craftcms.com/knowledge-base/displaying-a-navigation-for-a-structure-section.
+        # Fetch all entries.
         #}
-        {% nav topic in topics.all() %}
+        {% for guide in guides.level(1).all() %}
 
-          <!-- Topic -->
-          <a href="{{ topic.url }}" class="topic card card--link">
+          <!-- Guide -->
+          <div class="guide card">
 
-            {# Create asset query. #}
-            {% set image = topic.topicsImage.one() %}
+            <div class="guide__body card__body text">
 
-            {# Fetch asset. #}
-            <img class="topic__image" src="{{ image.url() }}" alt="{{ image.title }}">
-            <h3 class="topic__title h3">{{ topic.title }}</h3>
-            <p class="topic__description">{{ topic.topicsDescription }}</p>
-          </a>
-        {% endnav %}
+              {#
+              # Create asset query.
+              #}
+              {% set image = guide.guidesImage.one() %}
+
+              {#
+              # Fetch asset.
+              #}
+              <img class="guide__image" src="{{ image.url() }}" alt="{{ image.title }}">
+              <h3 class="guide__title h3">{{ guide.title }}</h3>
+              <p class="guide__description">{{ guide.guidesDescription }}</p>
+              <a class="guide__link" href="{{ guide.url }}">View all</a>
+            </div>
+            <div class="guide__entries">
+              {% for entry in craft.entries.section('guides').descendantOf(guide.id).descendantDist(2).all() %}
+                <a class="guide__entry" href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
       </div>
-    </div>
-  </section>
-
-  <!-- Section -->
-  <section class="section">
-
-    <!-- Container -->
-    <div class="container">
-
-      <!-- Title -->
-      <h2 class="title">Articles</h3>
-
-      {# Create articles query. #}
-      {% set articles = craft.entries.section('articles').all() %}
-
-      {# Fetch articles. #}
-      {% for article in articles %}
-        <article class="article">
-          <h1>{{ article.title }}</h1>
-          {% for block in article.articlesBody.all() %}
-            {% if block.type == 'text' %}
-              {{ block.text|parsedown }}
-            {% endif %}
-          {% endfor %}
-        </article>
-      {% endfor %}
-
     </div>
   </section>
 
