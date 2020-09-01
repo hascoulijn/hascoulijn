@@ -22,22 +22,31 @@ function clean() {
  * 2. Compress stylesheets to reduce filesize.
  * 3. Bundle stylesheets from the library as one stylesheet to reduce HTTP
  *    requests on runtime.
- * 4. Write build file in destinated glob.
  */
 function styles() {
-  return src(['./lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/app.css', './lib/js/highlight.js/vs.css'])
+  return src(['./lib/js/highlight.js/vs.css', './lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/app.css'])
     .pipe(autoprefix()) // 1
     .pipe(compress()) // 2
     .pipe(concat('screen.css')) // 3
-    .pipe(dest('./web/css')) // 4
+    .pipe(dest('./web/css'))
 }
 
+// TODO: Find a way to reduce the amount of workarounds needed to uglify and
+// concat JavaScript and try to bundle these tasks.
+
+/**
+ * Uglify (compress) JavaScript to reduce filesize.
+ */
 function scripts() {
   return src(['./lib/js/scripts.js'])
     .pipe(uglify())
     .pipe(dest('./lib/js/build'))
 }
 
+/**
+ * Bundle local JavaScript files with external libraries to create one file too
+ * reduce the amount of HTTP requests which reduces TTL.
+ */
 function bundle() {
   return src(['./lib/js/highlight.js/highlight.pack.js', './lib/js/build/scripts.js'])
   .pipe(concat('screen.js'))
