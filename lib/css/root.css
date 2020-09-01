@@ -11,6 +11,7 @@
   --app-color-background-alt: rgb(247, 247, 248);
   --app-color-background-alt2: rgb(242, 242, 247);
   --app-color-border: rgb(230, 230, 230);
+  --app-color-code: var(--app-color-border);
   --app-color-link: rgb(0, 122, 252);
   --app-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
 }
@@ -25,7 +26,8 @@
     --app-color-heading: rgb(222, 222, 222);
     --app-color-background: rgb(36, 38, 38);
     --app-color-background-alt: rgb(57, 59, 59);
-    --app-color-border: var(--app-coolor-background-alt);
+    --app-color-border: rgb(87, 91, 91);
+    --app-color-code: rgb(30, 30, 30);
     --app-color-link: rgb(0, 132, 252);
   }
 }

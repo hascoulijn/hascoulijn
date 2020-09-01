@@ -72,20 +72,18 @@
   padding: 1rem;
 }
 
-.card__body > *:first-child {
-  margin-top: 0;
-}
-
-.card__body > *:last-child {
-  margin-bottom: 0;
+@media screen and (min-width: 769px) {
+  .guide {
+    display: grid;
+    grid-template-columns: 320px auto;
+  }
 }
 
 /**
  * Guide specific rulesets.
  */
 .guide__image {
-  width: 3.25rem;
-  height: 3.25rem;
+  max-width: 3.25rem;
 }
 
 .guide__entries {
@@ -106,16 +104,35 @@
 }
 
 .guide__entry:hover {
-  background-color: var(--app-color-background-alt);
+  color: var(--app-color-background);
+  background-color: var(--app-color-link);
 }
 
-.guide__entry:active {
+/* .guide__entry:active {
   background-color: var(--app-color-background);
+} */
+
+.index {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  column-gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--app-color-border);
 }
 
-@media screen and (min-width: 768px) {
-  .guide {
-    display: grid;
-    grid-template-columns: 320px auto;
+.index__text {
+  max-width: 35rem;
+}
+
+.entries {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  .entries {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

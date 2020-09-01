@@ -49,7 +49,7 @@
               <a class="guide__link" href="{{ guide.url }}">View all</a>
             </div>
             <div class="guide__entries">
-              {% for entry in craft.entries.section('guides').descendantOf(guide.id).descendantDist(2).all() %}
+              {% for entry in craft.entries.descendantOf(guide.id).descendantDist(2).all() %}
                 <a class="guide__entry" href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a>
               {% endfor %}
             </div>
