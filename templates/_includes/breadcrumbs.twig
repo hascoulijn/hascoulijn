@@ -1,0 +1,10 @@
+{% set home = craft.entries.section('homepage').one() %}
+
+<div class="breadcrumbs text">
+  {%- spaceless -%}
+    <a href="{{ siteUrl }}" title="">{{ home.title }}</a>{{ entry.level > 1 ? '<span class="breadcrumbs__divider">/</span>' }}
+    {% for crumb in entry.getAncestors().all() %}
+      <a href="{{ crumb.getUrl() }}" title="">{{ crumb.title }}</a>{{ not loop.last ? '<span class="breadcrumbs__divider">/</span>' }}
+    {% endfor %}
+  {%- endspaceless -%}
+</div>

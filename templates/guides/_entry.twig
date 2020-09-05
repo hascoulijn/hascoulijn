@@ -1,0 +1,26 @@
+<!-- Section -->
+<section class="section">
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Article -->
+    <article class="article">
+      <header class="article__header">
+
+        {# Include breadcrumbs. #}
+        {% include '_includes/breadcrumbs' %}
+
+        <!-- Title -->
+        <h1>{{ entry.title }}</h1>
+      </header>
+
+      {# Fetch all matrix block types. #}
+      {% for block in entry.articlesBody.all() %}
+        {% if block.type == 'text' %}
+          {{ block.text|parsedown }}
+        {% endif %}
+      {% endfor %}
+    </article>
+  </div>
+</section>

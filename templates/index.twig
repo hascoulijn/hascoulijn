@@ -13,47 +13,19 @@
 
     <!-- Container -->
     <div class="container">
-
-      {#
-      # Create guides query.
-      #}
+      
+      {# Create guides query. #}
       {% set guides = craft.entries.section('guides') %}
 
       <!-- Title -->
-      <h2 class="title">{{ guides.one().section }}</h2>
+      <h2 class="section__title">{{ guides.one().section }}</h2>
 
-      <!-- Column -->
-      <div class="column">
+      <!-- Row -->
+      <div class="row">
 
-        {#
-        # Fetch all entries.
-        #}
-        {% for guide in guides.level(1).all() %}
-
-          <!-- Guide -->
-          <div class="guide card">
-
-            <div class="guide__body card__body text">
-
-              {#
-              # Create asset query.
-              #}
-              {% set image = guide.guidesImage.one() %}
-
-              {#
-              # Fetch asset.
-              #}
-              <img class="guide__image" src="{{ image.url() }}" alt="{{ image.title }}">
-              <h3 class="guide__title h3">{{ guide.title }}</h3>
-              <p class="guide__description">{{ guide.guidesDescription }}</p>
-              <a class="guide__link" href="{{ guide.url }}">View all</a>
-            </div>
-            <div class="guide__entries">
-              {% for entry in craft.entries.descendantOf(guide.id).descendantDist(2).all() %}
-                <a class="guide__entry" href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a>
-              {% endfor %}
-            </div>
-          </div>
+        {# Fetch all entries as guide from guides. #}
+        {% for guide in guides.level(1).limit(5).all() %}
+          {% include 'guides/_guide' %}
         {% endfor %}
       </div>
     </div>

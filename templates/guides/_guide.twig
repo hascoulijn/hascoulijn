@@ -1,0 +1,36 @@
+<!-- Guide -->
+<div class="guide card">
+  <div class="card__body text">
+
+    {# Create asset query. #}
+    {% set image = guide.guidesImage.one() %}
+
+    <!-- Image -->
+    <div class="guide__image">
+
+      {# Fetch asset. #}
+      <img src="{{ image.url() }}" alt="{{ image.title }}">
+    </div>
+
+    <!-- Title -->
+    <h3 class="guide__title h6">{{ guide.title }}</h3>
+
+    <!-- Description -->
+    <p class="guide__description">{{ guide.guidesDescription }}</p>
+
+    <!-- Entries -->
+    <div class="guide__entries">
+
+      {# 
+      # Fetch descendant entries of current entry with a descendant distance
+      # of the second level.
+      #}
+      {% for entry in craft.entries.descendantOf(guide.id).descendantDist(1).all() %}
+        <a class="guide__entry" href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a>
+      {% endfor %}
+    </div>
+
+    <!-- Link -->
+    <a class="guide__link" href="{{ guide.url }}">View all</a>
+  </div>
+</div>

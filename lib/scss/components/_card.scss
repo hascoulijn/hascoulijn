@@ -1,0 +1,19 @@
+/**
+ * The card component defines standard styling for a card and is globally
+ * applicable to any element.
+ */
+.card {
+  background-color: var(--app-color-background);
+  border-radius: 0.5rem;
+  box-shadow: var(--app-box-shadow);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--app-color-background-alt);
+  }
+}
+
+.card__body {
+  padding: 1rem;
+}

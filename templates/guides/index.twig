@@ -9,58 +9,9 @@
 {% block page %}
 
   {% if entry.type == 'index' %}
-
-    <!-- Section -->
-    <section class="section">
-
-      <!-- Container -->
-      <div class="container">
-        
-        <div class="column">
-
-          <div class="index">
-
-            {#
-            # Create asset query.
-            #}
-            {% set image = entry.guidesImage.one() %}
-
-            {#
-            # Fetch asset.
-            #}
-            <img class="index__image" src="{{ image.url() }}" alt="{{ image.title }}">
-            <div class="index__content">
-              <div class="index__text text">
-                <h1 class="index__title">{{ entry.title }}</h1>
-                <p class="index__description">{{ entry.guidesDescription }}</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Entries -->
-          <div class="entries">
-
-            {#
-            # Create entry query.
-            #}
-            {% set entries = craft.entries.descendantOf(entry.id).descendantDist(2) %}
-
-            {# Fetch all entries. #}
-            {% for entry in entries.all() %}
-              <div class="card">
-                <div class="card__body text">
-                  <h2 class="h3">{{ entry.title }}</h2>
-                  <p>{{ entry.seoDescription }}</p>
-                  <a href="{{ entry.url }}" title="{{ entry.title }}">Read</a>
-                </div>
-              </div>
-            {% endfor %}
-        </div>
-      </div>
-    </section>
-
+    {% include 'guides/_index' %}
   {% elseif entry.type == 'entry' %}
-    {% include 'guides/entry' %}
+    {% include 'guides/_entry' %}
   {% endif %}
 
 {% endblock page %}

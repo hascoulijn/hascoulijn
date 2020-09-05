@@ -1,0 +1,9 @@
+/**
+ * All declarations in the application's body rule set are global and its values
+ * are preferably declared via custom properties.
+ */
+ .app {
+  font-family: var(--app-font);
+  color: var(--app-color);
+  background-color: var(--app-color-background);
+}
