@@ -5,12 +5,8 @@
     {# Create asset query. #}
     {% set image = guide.guidesImage.one() %}
 
-    <!-- Image -->
-    <div class="guide__image">
-
-      {# Fetch asset. #}
-      <img src="{{ image.url() }}" alt="{{ image.title }}">
-    </div>
+    {# Fetch asset. #}
+    <img class="guide__image" src="{{ image.url() }}" alt="{{ image.title }}">
 
     <!-- Title -->
     <h3 class="guide__title h6">{{ guide.title }}</h3>

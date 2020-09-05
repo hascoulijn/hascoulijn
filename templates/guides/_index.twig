@@ -13,9 +13,7 @@
         {% set image = entry.guidesImage.one() %}
 
         {# Fetch asset. #}
-        <div class="index__image">
-          <img src="{{ image.url() }}" alt="{{ image.title }}">
-        </div>
+        <img class="index__image" src="{{ image.url() }}" alt="{{ image.title }}">
         <div class="index__body text">
           <h1 class="index__title h3">{{ entry.title }}</h1>
           <p class="index__description">{{ entry.guidesDescription }}</p>

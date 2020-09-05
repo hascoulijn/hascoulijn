@@ -1,10 +1,8 @@
 .guide__image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 3.25rem;
   max-height: 3.25rem;
-  margin-bottom: 0.75rem;
+  max-width: 3.25rem;
+  height: auto;
+  width: auto;
 }
 
 .guide__description {
