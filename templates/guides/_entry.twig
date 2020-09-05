@@ -2,14 +2,14 @@
 <section class="section">
 
   <!-- Container -->
-  <div class="container">
+  <div class="container container--small">
+
+    {# Include breadcrumbs. #}
+    {% include '_includes/breadcrumbs' %}
 
     <!-- Article -->
     <article class="article">
       <header class="article__header">
-
-        {# Include breadcrumbs. #}
-        {% include '_includes/breadcrumbs' %}
 
         <!-- Title -->
         <h1>{{ entry.title }}</h1>

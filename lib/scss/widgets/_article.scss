@@ -1,6 +1,14 @@
+@mixin link {
+  a {
+    color: var(--app-color-link);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .article {
-  max-width: 50rem;
-  margin: 0 auto;
 
   > *:first-child {
     margin-top: 0;
@@ -29,14 +37,20 @@
   @each $selector in ul, ol {
     #{$selector} {
       margin: 1rem 0 1rem 1.5rem;
+
+      @include link;
     }
   }
 
-  p > code {
-    padding: 0.125rem 0.25rem;
-    color: var(--app-color-heading);
-    background-color: var(--app-color-code);
-    border-radius: 0.25rem;
+  p {
+    @include link;
+
+    > code {
+      padding: 0.125rem 0.25rem;
+      color: var(--app-color-heading);
+      background-color: var(--app-color-code);
+      border-radius: 0.25rem;
+    }
   }
 
   blockquote {
