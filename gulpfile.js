@@ -21,7 +21,7 @@ function clean() {
 function styles() {
   return src(['./lib/scss/main.scss'])
     .pipe(scsslint())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(dest('./web/css'));
 }
 
