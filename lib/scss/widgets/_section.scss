@@ -1,0 +1,17 @@
+/**
+ * The section is part of the scaffold and divides DOM elements on the cross
+ * axis with padding.
+ */
+.section {
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 1rem;
+  }
+}
+
+.section__title {
+  margin-bottom: 1.5rem;
+}

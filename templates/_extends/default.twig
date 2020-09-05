@@ -1,20 +1,27 @@
 {%- minify -%}
 <!DOCTYPE html>
 <html lang="{{ craft.app.locale }}">
-  {# {%- cache -%} #}
+  {%- cache -%}
     <head>
       <meta charset="utf-8">
       <title>{{ title }}</title>
       <meta name="description" content="{{ description }}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <link rel="stylesheet" href="{{ rev('css/screen.css') }}">
-      <script type="text/javascript" src="{{ rev('js/screen.js') }}"></script>
+      <link rel="stylesheet" href="{{ rev('css/main.css') }}">
+      <script src="{{ rev('js/main.js') }}" type="module"></script>
     </head>
-  {# {%- endcache -%} #}
+  {%- endcache -%}
   <body class="app">
     <main class="scaffold">
       {% block page %}
       {% endblock page %}
+      {%- cache -%}
+        <footer class="footer">
+          <div class="container">
+            <small>&copy; {{ now|date('Y') }} Hasco Ulijn.</small>
+          </div>
+        </footer>
+      {%- endcache -%}
     </main>
   </body>
 </html>

@@ -1,0 +1,70 @@
+.article {
+  max-width: 50rem;
+  margin: 0 auto;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  > *:only-child {
+    margin: 0;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i}, .h#{$i} {
+      margin: 2rem 0 1rem;
+    }
+  }
+
+  @each $selector in p, img, blockquote, pre {
+    #{$selector} {
+      margin: 1rem 0;
+    }
+  }
+
+  @each $selector in ul, ol {
+    #{$selector} {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+  }
+
+  p > code {
+    padding: 0.125rem 0.25rem;
+    color: var(--app-color-heading);
+    background-color: var(--app-color-code);
+    border-radius: 0.25rem;
+  }
+
+  blockquote {
+    padding: 0.5rem;
+    background-color: var(--app-color-background-alt);
+    border-left: 4px solid var(--app-color-border);
+
+    > p:first-child {
+      margin-top: 0;
+    }
+
+    > p:last-child {
+      margin-bottom: 0;
+    }
+
+    > p:only-child {
+      margin: 0;
+    }
+
+    code {
+      @media screen and (prefers-color-scheme: light) {
+        background-color: var(--app-color-code-alt);
+      }
+    }
+  }
+
+  .hljs {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}

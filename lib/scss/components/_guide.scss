@@ -1,0 +1,35 @@
+.guide__image {
+  max-width: 3.25rem;
+  max-height: 3.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide__description {
+  color: var(--app-color-alt);
+}
+
+.guide__link {
+  display: inline-block;
+}
+
+.guide__entries {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.guide__entry {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  max-height: 2rem;
+  color: var(--app-color-heading);
+  background-color: var(--app-color-background);
+  border-radius: 1rem;
+  box-shadow: var(--app-box-shadow);
+}
+
+.guide__entry:hover {
+  color: var(--app-color-background);
+  background-color: var(--app-color-link);
+}

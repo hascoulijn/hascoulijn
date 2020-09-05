@@ -1,6 +1,8 @@
 'use strict';
 
 const { src, dest, watch, series, parallel } = require('gulp'),
+  sass = require('gulp-sass'),
+  scsslint = require('gulp-scss-lint'),
   autoprefix = require('gulp-autoprefixer'),
   compress = require('gulp-clean-css'),
   concat = require('gulp-concat'),
@@ -13,44 +15,21 @@ const gulpCleanCss = require('gulp-clean-css');
  * Delete files declared in the glob.
  */
 function clean() {
-  return del(['./lib/js/build', './web/css', './web/js', './web/manifest.json'])
+  return del(['./web/css', './web/js', './web/manifest.json']);
 }
 
-/**
- * 1. Auto prefix stylesheet declaration block properties with vendor prefixes
- *    for multi-browser support.
- * 2. Compress stylesheets to reduce filesize.
- * 3. Bundle stylesheets from the library as one stylesheet to reduce HTTP
- *    requests on runtime.
- */
 function styles() {
-  return src(['./lib/js/highlight.js/vs.css', './lib/css/reset.css', './lib/css/root.css', './lib/css/text.css', './lib/css/article.css', './lib/css/app.css'])
-    .pipe(autoprefix()) // 1
-    .pipe(compress()) // 2
-    .pipe(concat('screen.css')) // 3
-    .pipe(dest('./web/css'))
+  return src(['./lib/scss/main.scss'])
+    .pipe(scsslint())
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(dest('./web/css'));
 }
 
-// TODO: Find a way to reduce the amount of workarounds needed to uglify and
-// concat JavaScript and try to bundle these tasks.
-
-/**
- * Uglify (compress) JavaScript to reduce filesize.
- */
 function scripts() {
-  return src(['./lib/js/scripts.js'])
+  return src(['./node_modules/@highlightjs/cdn-assets/highlight.js', './node_modules/@highlightjs/cdn-assets/languages/dart.min.js', './lib/js/main.js'])
     .pipe(uglify())
-    .pipe(dest('./lib/js/build'))
-}
-
-/**
- * Bundle local JavaScript files with external libraries to create one file too
- * reduce the amount of HTTP requests which reduces TTL.
- */
-function bundle() {
-  return src(['./lib/js/highlight.js/highlight.pack.js', './lib/js/build/scripts.js'])
-  .pipe(concat('screen.js'))
-  .pipe(dest('./web/js'))
+    .pipe(concat('main.js'))
+    .pipe(dest('./web/js'));
 }
 
 /**
@@ -58,11 +37,11 @@ function bundle() {
  * NOTE: Make sure to set the files to never expire for this to have an effect.
  */
 function revision() {
-  return src(['./web/css/screen.css', './web/js/screen.js'], {base: './web/'})
+  return src(['./web/css/main.css'], {base: './web/'})
     .pipe(rev())
     .pipe(dest('./web'))
     .pipe(rev.manifest('manifest.json', {merge: true}))
-    .pipe(dest('./web'))
+    .pipe(dest('./web'));
 }
 
 /**
@@ -70,6 +49,6 @@ function revision() {
  */
 exports.clean = clean;
 exports.watch = function() {
-  watch(['./lib/css/**/*.css'], series(clean, styles, scripts, bundle, revision));
+  watch(['./lib/scss/**/*.scss', './lib/js/**/*.js'], series(clean, styles, scripts, revision));
 }
-exports.default = series(clean, styles, scripts, bundle, revision);
+exports.default = series(clean, styles, scripts, revision);
