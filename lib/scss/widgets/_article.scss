@@ -10,15 +10,15 @@
 
 .article {
 
-  > *:first-child {
+  *:first-child {
     margin-top: 0;
   }
 
-  > *:last-child {
+  *:last-child {
     margin-bottom: 0;
   }
 
-  > *:only-child {
+  *:only-child {
     margin: 0;
   }
 
@@ -36,7 +36,7 @@
 
   @each $selector in ul, ol {
     #{$selector} {
-      margin: 1rem 0 1rem 1.5rem;
+      margin: 1rem 0 1rem 1.125rem;
 
       @include link;
     }
@@ -47,7 +47,6 @@
 
     > code {
       padding: 0.125rem 0.25rem;
-      color: var(--app-color-heading);
       background-color: var(--app-color-code);
       border-radius: 0.25rem;
     }
@@ -58,15 +57,15 @@
     background-color: var(--app-color-background-alt);
     border-left: 4px solid var(--app-color-border);
 
-    > p:first-child {
+    p:first-child {
       margin-top: 0;
     }
 
-    > p:last-child {
+    p:last-child {
       margin-bottom: 0;
     }
 
-    > p:only-child {
+    p:only-child {
       margin: 0;
     }
 
@@ -81,4 +80,8 @@
     padding: 1rem;
     border-radius: 0.5rem;
   }
+}
+
+.article__header {
+  margin-bottom: 1rem;
 }

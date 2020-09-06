@@ -3,6 +3,7 @@
 @import 'modules/reset';
 @import 'modules/root';
 @import 'modules/typography';
+@import 'modules/hljs';
 
 @import 'widgets/app';
 @import 'widgets/scaffold';
@@ -18,10 +19,4 @@
 @import 'components/guide';
 @import 'components/index';
 
-@media screen and (prefers-color-scheme: light) {
-  @import '../../node_modules/highlight.js/scss/github';
-}
-
-@media screen and (prefers-color-scheme: dark) {
-  @import '../../node_modules/highlight.js/scss/vs2015';
-}
+@import 'utilities/color';

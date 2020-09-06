@@ -23,6 +23,7 @@
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --app-color: #{$app-scheme-dark-color};
+    --app-color-alt: #{$app-scheme-dark-color-alt};
     --app-color-heading: #{$app-scheme-dark-color-heading};
     --app-color-background: #{$app-scheme-dark-color-background};
     --app-color-background-alt: #{$app-scheme-dark-color-background-alt};
@@ -31,5 +32,3 @@
     --app-color-link: #{$app-scheme-dark-color-link};
   }
 }
-
-/* --app-color-heading: rgb(39, 39, 39); */
