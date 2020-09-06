@@ -1,0 +1,12 @@
+@media screen and (prefers-color-scheme: light) {
+  @import '../../node_modules/highlight.js/scss/vs';
+
+  // Override default `.hljs`'s background color property on light color scheme.
+  .hljs {
+    background-color: var(--app-color-background-alt);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  @import '../../node_modules/highlight.js/scss/vs2015';
+}
