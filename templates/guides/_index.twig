@@ -15,7 +15,7 @@
         {# Fetch asset. #}
         <img class="index__image" src="{{ image.url() }}" alt="{{ image.title }}">
         <div class="index__body text">
-          <h1 class="index__title h3">{{ entry.title }}</h1>
+          <h1 class="index__title h2">{{ entry.title }}</h1>
           <p class="index__description color-alt">{{ entry.guidesDescription }}</p>
         </div>
       </div>
@@ -30,7 +30,7 @@
         {% for entry in entries.all() %}
           <div class="card">
             <div class="card__body text">
-              <h2 class="h6">{{ entry.title }}</h2>
+              <h2 class="h3">{{ entry.title }}</h2>
               <p class="color-alt">{{ entry.seoDescription }}</p>
               <a href="{{ entry.url }}" title="{{ entry.title }}">Read</a>
             </div>

@@ -1,9 +1,9 @@
 {
   "name": "hascoulijn",
-  "version": "0.28.1",
-  "description": "Hasco Ulijn's personal website",
+  "version": "0.28.2",
+  "description": "Web and application development guides.",
   "main": "gulpfile.js",
-  "respository": "",
+  "respository": "https://github.com/hascoulijn/hascoulijn.git",
   "author": "Hasco Ulijn",
   "license": "UNLICENSED",
   "private": true,
