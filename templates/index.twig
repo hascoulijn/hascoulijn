@@ -7,6 +7,7 @@
 
 {# Start block. #}
 {% block page %}
+{%- cache -%}
 
   <!-- Section -->
   <section class="section">
@@ -31,4 +32,5 @@
     </div>
   </section>
 
+{%- endcache -%}
 {% endblock page %}
