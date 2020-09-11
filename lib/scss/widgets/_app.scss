@@ -1,13 +1,7 @@
-/**
- * All declarations in the application's body rule set are global and its values
- * are preferably declared via custom properties.
- */
 .app {
-  font-family: var(--app-font);
-  color: var(--app-color);
   background-color: var(--app-color-background);
-}
-
-.app a[target="_blank"]:after {
-  content: '\00A0\02197';
+  color: var(--app-color);
+  font-family: var(--app-font-family);
+  font-size: var(--app-font-size);
+  line-height: var(--app-line-height);
 }

@@ -1,22 +1,16 @@
-$app-font: system-ui;
+$app-font-family: system-ui;
+$app-font-size: 16px;
+$app-line-height: 24px;
 
-$app-scheme-light-color: rgb(51, 51, 51);
-$app-scheme-light-color-alt: rgb(142, 142, 147);
-$app-scheme-light-color-heading: rgb(17, 17, 17);
-$app-scheme-light-color-background: rgb(255, 255, 255);
-$app-scheme-light-color-background-alt: rgb(247, 247, 248);
-$app-scheme-light-color-background-alt2: rgb(242, 242, 247);
-$app-scheme-light-color-border: rgb(230, 230, 230);
-$app-scheme-light-color-code: $app-scheme-light-color-background-alt;
-$app-scheme-light-color-code-alt: $app-scheme-light-color-border;
-$app-scheme-light-color-link: rgb(0, 122, 252);
-$app-scheme-light-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+$app-light-color-background: #fff;
 
-$app-scheme-dark-color: rgb(245, 245, 247);
-$app-scheme-dark-color-alt: rgb(152, 152, 157);
-$app-scheme-dark-color-heading: rgb(255, 255, 255);
-$app-scheme-dark-color-background: rgb(36, 38, 38);
-$app-scheme-dark-color-background-alt: rgb(57, 59, 59);
-$app-scheme-dark-color-border: rgb(87, 91, 91);
-$app-scheme-dark-color-code: rgb(30, 30, 30);
-$app-scheme-dark-color-link: rgb(0, 132, 252);
+$app-dark-color-background: #202225;
+
+$app-sizes-heading: (
+  'h1': 2,
+  'h2': 1.5,
+  'h3': 1.25,
+  'h4': 1,
+  'h5': .875,
+  'h6': .75
+);

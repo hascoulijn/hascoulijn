@@ -1,9 +1,9 @@
 *,
-*:before,
-*:after {
+*::before,
+*::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
 }
 
 :root {
@@ -11,29 +11,14 @@
   line-height: 24px;
 }
 
-/**
- * The width and height properties include the content, padding, 
- * and border, but do not include the margin. Note that padding and border
- * will be inside of the box.
- */
 html {
   box-sizing: border-box;
 }
 
-/**
- * 1. The browser emphasizes legibility over rendering speed and geometric
- *    precision. This enables kerning and optional ligatures.
- * 2. Smooth the font on the level of the pixel, as opposed to the subpixel.
- *    Switching from subpixel rendering to antialiasing for light text on dark
- *    backgrounds makes it look lighter.
- * 3. Render text with grayscale antialiasing, as opposed to the subpixel.
- *    Switching from subpixel rendering to antialiasing for light text on dark
- *    backgrounds makes it look lighter.
- */
 body {
-  text-rendering: optimizeLegibility; /* 1 */
-  -moz-osx-font-smooting: grayscale; /* 2 */
-  -webkit-font-smoothing: antialiased; /* 3 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smooting: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -41,34 +26,10 @@ a {
   text-decoration: none;
 }
 
-/**
- * Remove whitespace from images.
- */
 img {
-  display: block;
-  max-width: 100%;
-}
-
-/**
- * Adjacent cells have shared borders.
- */
-table {
-  border-collapse: collapse;
-}
-
-b,
-strong {
-  font-weight: 600;
+  display: inline-block;
 }
 
 small {
-  font-size: 0.75em;
-}
-
-pre {
-  overflow-x: auto;
-}
-
-code {
-  font-size: 0.875em;
+  font-size: .75em;
 }

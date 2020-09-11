@@ -1,27 +1,47 @@
 {
   "name": "hascoulijn",
-  "version": "0.28.2",
-  "description": "Web and application development guides.",
+  "version": "0.1.0",
+  "description": "",
   "main": "gulpfile.js",
   "respository": "https://github.com/hascoulijn/hascoulijn.git",
   "author": "Hasco Ulijn",
   "license": "UNLICENSED",
   "private": true,
+  "paths": {
+    "src": {
+      "clean": [
+        "./web/manifest.json",
+        "./web/css",
+        "./web/js"
+      ],
+      "scss": [
+        "./lib/scss/**/*.scss"
+      ],
+      "js": [
+        "./lib/js/**/*.js"
+      ],
+      "rev": [
+        "./web/css/screen.css",
+        "./web/js/screen.js"
+      ]
+    },
+    "dest": {
+      "css": "./web/css",
+      "js": "./web/js",
+      "rev": "./web/"
+    }
+  },
   "devDependencies": {
     "delete": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
     "gulp-rev": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-scss-lint": "^1.0.0",
-    "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^2.0.0",
     "node-sass": "^4.14.1"
   },
-  "dependencies": {
-    "@highlightjs/cdn-assets": "^10.1.2",
-    "highlight.js": "^10.1.2"
-  }
+  "dependencies": {}
 }

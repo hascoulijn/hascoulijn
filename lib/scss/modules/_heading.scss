@@ -1,0 +1,13 @@
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-weight: 600;
+    margin: .5rem 0;
+  }
+}
+
+@each $key, $value in $app-sizes-heading {
+  #{$key} {
+    font-size: ($value * 1rem);
+    line-height: line-height($value);
+  }
+}

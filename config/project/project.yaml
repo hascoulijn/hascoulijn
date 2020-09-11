@@ -1,4 +1,4 @@
-dateModified: 1599325501
+dateModified: 1599838828
 email:
   fromEmail: hascoulijn@gmail.com
   fromName: hascoulijn
@@ -12,6 +12,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: SQ9JLF0M3Y30G75W6HH2PTSX
+    schemaVersion: 3.0.0
   minify:
     edition: standard
     enabled: true

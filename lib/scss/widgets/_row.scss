@@ -1,8 +1,0 @@
-/**
- * The row is part of the scaffold and divides its child elements horizontally.
- */
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  grid-gap: 2rem;
-}

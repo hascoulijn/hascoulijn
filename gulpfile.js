@@ -1,54 +1,48 @@
 'use strict';
 
-const { src, dest, watch, series, parallel } = require('gulp'),
-  sass = require('gulp-sass'),
-  scsslint = require('gulp-scss-lint'),
-  autoprefix = require('gulp-autoprefixer'),
-  compress = require('gulp-clean-css'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify-es').default,
-  rev = require('gulp-rev'),
-  del = require('delete');
-const gulpCleanCss = require('gulp-clean-css');
+const del = require('delete');
+const { src, dest, watch, series, parallel } = require('gulp');
+const gulpif = require('gulp-if');
+const sass = require('gulp-sass');
+const scsslint = require('gulp-scss-lint');
+const autoprefix = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify-es').default;
+const concat = require('gulp-concat');
+const rev = require('gulp-rev');
 
-/**
- * Delete files declared in the glob.
- */
+var pkg = require('./package.json');
+var env = require('./env.json');
+
 function clean() {
-  return del(['./web/css', './web/js', './web/manifest.json']);
+  return del(pkg.paths.src.clean);
 }
 
 function styles() {
-  return src(['./lib/scss/main.scss'])
-    .pipe(scsslint())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(dest('./web/css'));
+  return src(pkg.paths.src.scss)
+    .pipe(gulpif(!env.production, scsslint()))
+    .pipe(sass({outputStyle: !env.production ? 'expanded' : 'compressed'})
+    .on('error', sass.logError))
+    .pipe(autoprefix())
+    .pipe(dest(pkg.paths.dest.css));
 }
 
 function scripts() {
-  return src(['./node_modules/@highlightjs/cdn-assets/highlight.js', './node_modules/@highlightjs/cdn-assets/languages/dart.min.js', './lib/js/main.js'])
-    .pipe(uglify())
-    .pipe(concat('main.js'))
-    .pipe(dest('./web/js'));
+  return src(pkg.paths.src.js)
+    .pipe(gulpif(env.production, uglify()))
+    .pipe(concat('screen.js'))
+    .pipe(dest(pkg.paths.dest.js))
 }
 
-/**
- * Static asset revisioning by appending content hash to filenames.
- * NOTE: Make sure to set the files to never expire for this to have an effect.
- */
 function revision() {
-  return src(['./web/css/main.css'], {base: './web/'})
+  return src(pkg.paths.src.rev, {base: './web/'})
     .pipe(rev())
-    .pipe(dest('./web'))
+    .pipe(dest(pkg.paths.dest.rev))
     .pipe(rev.manifest('manifest.json', {merge: true}))
-    .pipe(dest('./web'));
+    .pipe(dest(pkg.paths.dest.rev))
 }
 
-/**
- * Run '$ gulp --tasks' for a complete lists of Gulp tasks available.
- */
 exports.clean = clean;
-exports.watch = function() {
-  watch(['./lib/scss/**/*.scss', './lib/js/**/*.js'], series(clean, styles, scripts, revision));
-}
-exports.default = series(clean, styles, scripts, revision);
+exports.styles = styles;
+exports.scripts = scripts;
+exports.revision = revision;
+exports.default = series(clean, parallel(styles, scripts), revision);

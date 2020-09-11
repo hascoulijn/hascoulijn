@@ -1,34 +1,12 @@
-/**
- * Declare custom properties for this application.
- */
 :root {
-  --app-font: #{$app-font};
-  --app-color: #{$app-scheme-light-color};
-  --app-color-alt: #{$app-scheme-light-color-alt};
-  --app-color-heading: #{$app-scheme-light-color-heading};
-  --app-color-background: #{$app-scheme-light-color-background};
-  --app-color-background-alt: #{$app-scheme-light-color-background-alt};
-  --app-color-background-alt2: #{$app-scheme-light-color-background-alt2};
-  --app-color-border: #{$app-scheme-light-color-border};
-  --app-color-code: #{$app-scheme-light-color-code};
-  --app-color-code-alt: #{$app-scheme-light-color-code-alt};
-  --app-color-link: #{$app-scheme-light-color-link};
-  --app-box-shadow: #{$app-scheme-light-box-shadow};
+  --app-color-background: #{$app-light-color-background};
+  --app-font-family: #{$app-font-family};
+  --app-font-size: #{$app-font-size};
+  --app-line-height: #{$app-line-height};
 }
 
-/**
- * Override custom properties for users that prefer an interface that has a
- * dark theme.
- */
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --app-color: #{$app-scheme-dark-color};
-    --app-color-alt: #{$app-scheme-dark-color-alt};
-    --app-color-heading: #{$app-scheme-dark-color-heading};
-    --app-color-background: #{$app-scheme-dark-color-background};
-    --app-color-background-alt: #{$app-scheme-dark-color-background-alt};
-    --app-color-border: #{$app-scheme-dark-color-border};
-    --app-color-code: #{$app-scheme-dark-color-code};
-    --app-color-link: #{$app-scheme-dark-color-link};
+    --app-color-background: #{$app-dark-color-background};
   }
 }
