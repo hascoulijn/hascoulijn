@@ -1,4 +1,4 @@
-dateModified: 1599838828
+dateModified: 1599932965
 email:
   fromEmail: hascoulijn@gmail.com
   fromName: hascoulijn
@@ -21,6 +21,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: false
+    schemaVersion: 3.0.9
   wordsmith:
     edition: standard
     enabled: true
