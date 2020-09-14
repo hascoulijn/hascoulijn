@@ -12,7 +12,7 @@
     RewriteBase /
  
     RewriteCond %{HTTP_HOST} ^(www\.)?hascoulijn\.nl$ [NC]
-    RewriteRule ^(.*)$ https://yourdomain.com/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://hascoulijn.com/$1 [R=301,L]
 
 </IfModule>
 
