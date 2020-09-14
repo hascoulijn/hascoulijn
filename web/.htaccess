@@ -8,9 +8,11 @@
 
 <IfModule mod_rewrite.c>
 
-    RewriteEngine on
-    RewriteCond %{HTTP_HOST} !^hascoulijn\.nl$
-    RewriteRule ^ http://hascoulijn.com%{REQUEST_URI} [R=301,L]
+    RewriteEngine On
+    RewriteBase /
+ 
+    RewriteCond %{HTTP_HOST} ^(www\.)?hascoulijn\.nl$ [NC]
+    RewriteRule ^(.*)$ https://yourdomain.com/$1 [R=301,L]
 
 </IfModule>
 
