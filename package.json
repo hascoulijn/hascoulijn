@@ -1,7 +1,7 @@
 {
-  "name": "night-city-wire",
+  "name": "hasco-ulijn",
   "version": "0.1.0",
-  "description": "Cyberpunk 2077 community website, news, updates, guides and walkthroughs.",
+  "description": "",
   "main": "gulpfile.js",
   "respository": "https://github.com/hascoulijn/hascoulijn.git",
   "author": "Hasco Ulijn",

@@ -1,12 +1,8 @@
-dateModified: 1599932965
+dateModified: 1600451650
 email:
   fromEmail: hascoulijn@gmail.com
   fromName: hascoulijn
   transportType: craft\mail\transportadapters\Sendmail
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 plugins:
   assetrev:
     edition: standard
@@ -21,14 +17,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  seomatic:
-    edition: standard
-    enabled: false
-    schemaVersion: 3.0.9
-  wordsmith:
+  redactor:
     edition: standard
     enabled: true
-    schemaVersion: 0.0.0.0
+    schemaVersion: 2.3.0
 system:
   edition: solo
   live: true
