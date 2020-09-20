@@ -1,0 +1,18 @@
+contentColumnType: string(640)
+fieldGroup: 49ffd94f-5461-4bda-93a5-8c8452cc77ac
+handle: seoDescription
+instructions: ''
+name: Description
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 160
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

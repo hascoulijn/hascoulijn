@@ -2,7 +2,8 @@
 {% extends '_extends/default' %}
 
 {% set title = entry.seoTitle %}
-{% set description = entry.seoDescription %}
+{% set description = entry.seoDescription ?? null %}
+{% set keywords = entry.seoKeywords ?? null %}
 
 {# Start block. #}
 {% block page %}

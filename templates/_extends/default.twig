@@ -3,15 +3,17 @@
 <html lang="{{ craft.app.locale }}">
   <head>
     <meta charset="utf-8">
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}">
+    <title>{{ title ?? default.seoTitle }}</title>
+    <meta name="author" content="Hasco Ulijn">
+    <meta name="description" content="{{ description ?? default.seoDescription }}">
+    <meta name="keywords" contents="{{ keywords ?? default.seoKeywords }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1 user-scalable=no">
     <link rel="stylesheet" href="{{ rev('css/screen.css') }}">
+    <link rel="canonical" href="{{ siteUrl }}" />
     <script src="{{ rev('js/screen.js') }}" type="text/javascript" async></script>
   </head>
   <body class="app">
-    {% block page %}
-    {% endblock page %}
+    {% block page %}{% endblock page %}
   </body>
 </html>
 {%- endminify -%}
