@@ -1,7 +1,11 @@
-dateModified: 1600451650
+dateModified: 1614178293
 email:
-  fromEmail: hascoulijn@gmail.com
-  fromName: hascoulijn
+  fromEmail: $SYSTEM_EMAIL_ADDRESS
+  fromName: $SENDER_NAME
+  replyToEmail: null
+  template: null
+  transportSettings:
+    command: ''
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
   assetrev:
@@ -25,7 +29,7 @@ system:
   edition: solo
   live: true
   name: $SYSTEM_NAME
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.4
   timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false

@@ -1,10 +1,10 @@
 {
   "require": {
     "clubstudioltd/craft-asset-rev": "6.0.2",
-    "craftcms/cms": "3.5.16",
-    "craftcms/redactor": "2.8.3",
+    "craftcms/cms": "3.6.7",
+    "craftcms/redactor": "2.8.5",
     "nystudio107/craft-minify": "1.2.10",
-    "spacecatninja/imager-x": "v3.2.6",
+    "spacecatninja/imager-x": "v3.3.0",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
@@ -19,7 +19,7 @@
     "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.4"
     }
   },
   "scripts": {
